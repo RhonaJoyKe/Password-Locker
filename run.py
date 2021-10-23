@@ -55,7 +55,10 @@ def find_new_creds(account_username):
     return Creds.find_by_account_username(account_username)
 def display_new_creds():
     '''
+    displays contacts
+
     '''
+    return Creds.display_accounts()
 
 
 
