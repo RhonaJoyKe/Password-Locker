@@ -36,7 +36,7 @@ class TestUser(unittest.TestCase):
 
     def test_save_user(self):
         '''
-        test_save_contact test case to test if the user object is saved into
+        test_save_user test case to test if the user object is saved into
          the user list
         '''
         self.new_user.save_user()
@@ -44,7 +44,7 @@ class TestUser(unittest.TestCase):
     
     def test_delete_user(self):
             '''
-            test_delete_contact to test if we can remove a contact from our contact list
+            test_delete_user to test if we can remove a user from our user list
             '''
             self.new_user.save_user()
             proto_contact = User("Test","user","0712345678","test@user.com","lnk","trhj89") # new contact
@@ -55,7 +55,7 @@ class TestUser(unittest.TestCase):
     
     def test_find_by_username(self):
         '''
-        test to check if we can find a contact by phone number and display information
+        test to check if we can find a user by username and display information
         '''
 
         # self.new_contact.save_contact()
