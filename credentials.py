@@ -11,7 +11,14 @@ class Creds:
 
     def save_account(self):
         '''
-        save_user method saves user objects into user_list
+        save_user method saves account objects into user_list
     '''
         Creds.user_accounts.append(self)
+    
+    def delete_account(self):
+        '''
+        delete_account method delets account objects from user_accounts
+
+        '''
+        Creds.user_accounts.remove(self)
     

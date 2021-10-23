@@ -30,3 +30,20 @@ class TestCreds(unittest.TestCase):
         '''
         self.new_cred.save_account()
         self.assertEqual(len(Creds.user_accounts),1)
+    
+    def test_delete_account(self):
+        '''
+        test_delete_account test case to test if the user object is deleted from
+        user  account list
+
+        '''
+        self.new_cred.save_account()
+        proto_account = Creds("Twitter","user","2345678") # new contact
+        proto_account.save_account()
+
+        self.new_cred.delete_account()# Deleting a contact object
+        self.assertEqual(len(Creds.user_accounts),1) 
+    
+
+if __name__ ==  '__main__':
+    unittest.main()
