@@ -35,6 +35,18 @@ def new_creds(account_name,account_username,account_password):
     '''
     new_creds= Creds(account_name,account_username,account_password)
     return new_creds
+def  save_new_creds(credentials):
+    '''
+    saves new account in credentials
+
+    '''
+    credentials.save_account()
+def  delete_new_creds(credentials):
+    '''
+    saves new account in credentials
+
+    '''
+    credentials.delete_account()
 
 
 
