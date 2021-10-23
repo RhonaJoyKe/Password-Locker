@@ -12,5 +12,8 @@ class TestCreds(unittest.TestCase):
     
     def test_init(self):
         '''
-        tests if the object is initialized properlyg
+        tests if the object is initialized properly
         '''
+        self.assertEqual(self.new_cred.account_name,"Twitter")
+        self.assertEqual(self.new_cred.account_username,"Roro")
+        self.assertEqual(self.new_cred.account_password,"46677")
