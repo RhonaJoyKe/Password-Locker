@@ -43,6 +43,15 @@ class TestCreds(unittest.TestCase):
 
         self.new_cred.delete_account()# Deleting a contact object
         self.assertEqual(len(Creds.user_accounts),1) 
+    def test_save_multiple_account(self):
+            '''
+            test_save_multiple_contact to check if we can save multiple contact
+            objects to our contact_list
+            '''
+            self.new_cred.save_account()
+            proto_account = Creds("Twitter","user1","2456Y78") # new contact
+            proto_account.save_account()
+            self.assertEqual(len(Creds.user_accounts),2)
     
 
 if __name__ ==  '__main__':
