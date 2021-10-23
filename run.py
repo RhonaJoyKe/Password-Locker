@@ -47,6 +47,12 @@ def  delete_new_creds(credentials):
 
     '''
     credentials.delete_account()
+def find_new_creds(account_username):
+    '''
+    finds new account in credentials
+
+    '''
+    return Creds.find_by_account_username(account_username)
 
 
 
