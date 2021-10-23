@@ -9,7 +9,7 @@ class Creds:
         self.account_username = account_username
         self.account_password = account_password
 
-    def save_creds(self):
+    def save_account(self):
         '''
         save_user method saves user objects into user_list
     '''
