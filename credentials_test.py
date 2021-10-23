@@ -17,3 +17,10 @@ class TestCreds(unittest.TestCase):
         self.assertEqual(self.new_cred.account_name,"Twitter")
         self.assertEqual(self.new_cred.account_username,"Roro")
         self.assertEqual(self.new_cred.account_password,"46677")
+    
+    def tearDown(self):
+            '''
+            tearDown method that does clean up after each test case has run.
+            '''
+            Creds.user_accounts = []
+    
