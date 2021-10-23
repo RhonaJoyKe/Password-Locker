@@ -22,3 +22,27 @@ class Creds:
         '''
         Creds.user_accounts.remove(self)
     
+    @classmethod
+    def find_by_account_username(cls,account_username):
+        '''
+        Method that takes in a number and returns a contact that matches that number.
+
+        Args:
+            number: Phone number to search for
+        Returns :
+            Contact of person that matches the number.
+        '''
+
+        for creds in cls.user_accounts:
+            if creds.account_username == account_username:
+                return creds
+
+
+    @classmethod
+    def display_accounts(cls):
+        '''
+        method that returns the contact list
+        '''
+        return cls.user_accounts
+    
+    

@@ -52,6 +52,15 @@ class TestCreds(unittest.TestCase):
             proto_account = Creds("Twitter","user1","2456Y78") # new contact
             proto_account.save_account()
             self.assertEqual(len(Creds.user_accounts),2)
+
+    def test_display_accounts(self):
+        '''
+        method that returns a list of all contacts saved
+        '''
+
+        self.assertEqual(Creds.display_accounts(),Creds.user_accounts)
+       
+    
     
 
 if __name__ ==  '__main__':
