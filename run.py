@@ -59,6 +59,9 @@ def display_new_creds():
 
     '''
     return Creds.display_accounts()
+#main function 
+def main():
+ print("Holla there,Cómo estás,")
 
 
 
