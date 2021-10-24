@@ -75,13 +75,13 @@ def main():
     print(f"Hello {user_name}. what would you like to do?")
     print('\n')
     while True:
-                    print("Use these short codes : na - create a new account, da - display contacts,lg-login into account, fa -find an account, ex -exit the password locker list ")
+        print("Use these short codes : na - create a new account, da - display contacts,lg-login into account, fa -find an account, ex -exit the password locker list ")
 
-                    short_code = input().lower()
+        short_code = input().lower()
 
-                    if short_code == 'na':
+        if short_code == 'na':
                             print("New Account")
-                            print("-"*10)
+                            print("-"*50)
 
                             print ("Please Enter your First name ....")
                             first_name = input()
@@ -101,6 +101,28 @@ def main():
                             print("Please Enter your Password ...")
                             password = input()
                             save_new_user(new_user(first_name,last_name,phone_number,email,username,password))
+                            print('-'*50)
+                            print(f"Hello {first_name}.Congratulations Account created successfully. Proceed to login to access your account")
+                            print('-'*50)
+        elif short_code == 'lg' or short_code == 'da':
+            # login the user and check if the user exists
+            print('-'*50)
+            print("Enter your username ...")
+            username = input()
+            print("Enter your password ...")
+            user_password = input()
+            if find_new_user(user):  # check if user exists
+                # check if password is correct
+                if check_user_password(username, user_password):
+                    print("\n")
+                    print(f"Welcome back {username} 😃")
+                    print('*'*50)
+                    while True:
+                        print("Select an option below to continue: \n")
+                        print(
+                            "1. Create a new credential\n2. View saved credentials\n3. Delete credentials\n4. Logout")
+                        print("\n")
+        
                        
 
 

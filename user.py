@@ -39,3 +39,12 @@ class User:
         for user in cls.user_list:
             if user.username == username:
                 return user
+    @classmethod
+    def check_user(cls, username, password):
+        """
+        Check if user exists and if password is correct
+        """
+        user = cls.find_by_username(username)
+        if user and user.password == password:
+            return True
+        return False

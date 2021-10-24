@@ -63,6 +63,10 @@ class TestUser(unittest.TestCase):
         # test_contact.save_contact()
 
         found_contact = User.find_by_username("Jojo")
+    
+    def test_check_user(self):
+
+        self.found_user = User.check_user("Jojo","466777")
 
 if __name__ ==  '__main__':
     unittest.main()
