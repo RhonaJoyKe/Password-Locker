@@ -1,4 +1,6 @@
 #!/usr/bin/env python3.8
+import random
+import string
 from user import User
 from credentials import Creds
 
@@ -59,8 +61,13 @@ def display_new_creds():
 
     '''
     return Creds.display_accounts()
-def create_password():
-    
+def create_password(length=6):
+    '''
+    creates password
+
+    '''
+    characters = string.ascii_letters + string.digits + string.punctuation
+    return ''.join(random.choice(characters) for i in range(length))
 #main function 
 def main():
     print("Holla there,Cómo estás,Welcome to your Password Locker App. What is your name?")
@@ -77,22 +84,23 @@ def main():
                             print("-"*10)
 
                             print ("Please Enter your First name ....")
-                            f_name = input()
+                            first_name = input()
 
                             print("Please Enter your Last name ...")
-                            l_name = input()
+                            last_name = input()
 
                             print("Please Enter your Phone number ...")
-                            p_number = input()
+                            phone_number = input()
 
                             print("Please Enter your Email address ...")
-                            e_address = input()
+                            email = input()
 
                             print("Please Enter your Username ...")
-                            u_name = input()
+                            username = input()
 
                             print("Please Enter your Password ...")
-                            p_word = input()
+                            password = input()
+                            save_new_user(new_user(first_name,last_name,phone_number,email,username,password))
                        
 
 
