@@ -24,11 +24,16 @@ def delete_new_user(user):
     deletes_user
     '''
     user.delete_user()
-def find_new_user(user):
+def find_new_user(username):
     '''
     finds users
     '''
-    user.find_by_username()
+    User.find_by_username(username)
+def user_password(username, password):  # check if the password is correct
+    '''
+    funtion to check whether the user enter the correct username and password
+    '''
+    return User.check_user(username, password)
 ##credentials class
 def new_creds(account_name,account_username,account_password):
     '''
@@ -111,11 +116,11 @@ def main():
             username = input()
             print("Enter your password ...")
             user_password = input()
-            if find_new_user(user):  # check if user exists
+            if find_new_user(username):  # check if user exists
                 # check if password is correct
-                if check_user_password(username, user_password):
+                if user_password (username, user_password):
                     print("\n")
-                    print(f"Welcome back {username} 😃")
+                    print(f"Welcome back {username} ")
                     print('*'*50)
                     while True:
                         print("Select an option below to continue: \n")
