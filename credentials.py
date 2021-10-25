@@ -23,7 +23,7 @@ class Creds:
         Creds.user_accounts.remove(self)
     
     @classmethod
-    def find_by_account_username(cls,account_username):
+    def find_by_account_name(cls,account_name):
         '''
         Method that takes in a number and returns a contact that matches that number.
 
@@ -34,7 +34,7 @@ class Creds:
         '''
 
         for creds in cls.user_accounts:
-            if creds.account_username == account_username:
+            if creds.account_name == account_name:
                 return creds
         return False
 

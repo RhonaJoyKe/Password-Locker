@@ -62,7 +62,7 @@ class TestCreds(unittest.TestCase):
         # test_contact = User("Test","user","0711223344","test@user.com") # new contact
         # test_contact.save_contact()
 
-        found_contact = Creds.find_by_account_username("Roro")
+        found_account = Creds.find_by_account_username("Twitter")
 
     def test_display_accounts(self):
         '''

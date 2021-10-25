@@ -82,7 +82,10 @@ def main():
     print(f"Hello {user_name}. what would you like to do?")
     print('\n')
     while True:
-        print("Use these short codes : na - create a new account,lg-login into account,  ex -exit the password locker list ")
+        print("Use these short codes :")
+        print("na - create a new account")
+        print("lg-login into account") 
+        print("ex -exit the password locker list ")
 
         short_code = input().lower()
 
@@ -92,17 +95,21 @@ def main():
 
                             print ("Please Enter your First name ....")
                             first_name = input()
+                            print("-"*50)
 
                             print("Please Enter your Last name ...")
                             last_name = input()
+                            print("-"*50)
 
                            
 
                             print("Please Enter your Username ...")
                             username = input()
+                            print("-"*50)
 
                             print("Please Enter your Password ...")
                             password = input()
+                            print("-"*50)
                             save_new_user(new_user(first_name,last_name,username,password))
                             print('-'*50)
                             print(f"Hello {first_name}.Congratulations Account created successfully. Proceed to login to access your account")
@@ -115,6 +122,7 @@ def main():
             print("-"*50)
             print("Please Enter your Password ...")
             password = input()
+            print("-"*50)
             if username != 'Jojo' and password!= '12345':
                     print('The account does not exist, please create an account')
             else:
@@ -146,12 +154,14 @@ def s_accounts_view():
 
             print('What is your new Social Account Name? ...')
             accountname = input()
+            print("-"*20)
 
             print('What is your username in the Social Account Name...')
             account_username= input()
+            print("-"*20)
                 
             print ('\n')
-            print('Do you want to :1.cp - To create your own password or 2.gp - To get the password generated for you')
+            print('Do you want to :")1.cp - To create your own password or 2.gp - To get the password generated for you')
                
             short_code1 = input().lower()
             if short_code1 == 'cp':
@@ -201,17 +211,19 @@ def s_accounts_view():
                         print('\n')
 
         elif short_code == 'dl':
-                    print('Enter an account you want to delete?')
+                    print('Enter username for account you want to delete?')
 
-                    delete_account = input()       
+                    account = input()       
+                    found_account=find_new_creds(account)
                  
-                    delete_new_creds(delete_account)
+                    delete_new_creds(found_account)
 
         elif short_code == 'ex':
                     print('Bye! Come back soon!.')    
         else:
                     print('Wrong short code! Try again')
-        break
+        
+    
             
             
          
