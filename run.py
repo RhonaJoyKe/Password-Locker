@@ -130,12 +130,18 @@ def main():
                     print ('\n')
                     s_accounts_view()
 
+        elif short_code == 'ex':
+            print("Thank you for visiting us!!")
+        else:
+            print("Invalid Short code! Please choose a given code")
+
+
                     
                    
 
 def s_accounts_view():
         
-    print('Good news, you can easily store your social accounts credentials here!')
+    print('Welcome to your password locker socials account ')
   
     print('Use these short codes')
     print ('\n')
