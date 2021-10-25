@@ -222,6 +222,8 @@ def s_accounts_view():
                     print('Bye! Come back soon!.')    
         else:
                     print('Wrong short code! Try again')
+
+        break
         
     
             
