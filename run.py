@@ -55,7 +55,7 @@ def  delete_new_creds(credentials):
     saves new account in credentials
 
     '''
-    credentials.delete_account()
+    return credentials.delete_account()
 def find_new_creds(account_username):
     '''
     finds new account in credentials
@@ -118,106 +118,102 @@ def main():
             if username != 'Jojo' and password!= '12345':
                     print('The account does not exist, please create an account')
             else:
-                    print(f'Hello {username}. This is your password locker account, Welcome!')
+                    print(f'Hello {username}. Welcome to your socials password locker account')
                     print ('\n')
                     s_accounts_view()
+
+                    
                    
 
-        def s_accounts_view():
+def s_accounts_view():
         
-            print('Good news, you can easily store your social accounts credentials here!')
+    print('Good news, you can easily store your social accounts credentials here!')
   
-            print('Use these short codes')
-            print ('\n')
-            while True:
-                print('nc - Add a new social account credentials')
-                print('ec - Add an existing social account credentials')
-                print('da - Display saved social accounts ')
-                print('dl - Delete a saved account ')
-                print('ex - Exit from the account')
+    print('Use these short codes')
+    print ('\n')
+    while True:
+        print('nc - Add a new social account credentials')
+        print('ec - Add an existing social account credentials')
+        print('da - Display saved social accounts ')
+        print('dl - Delete a saved account ')
+        print('ex - Exit from the account')
 
-                short_code = input().lower()
+        short_code = input().lower()
 
         if short_code == 'nc':
-                print('Add a new social account credentials')
-                print("-"*20)
+            print('Add a new social account credentials')
+            print("-"*20)
 
-                print('What is your new Social Account Name? ...')
-                accountname = input()
+            print('What is your new Social Account Name? ...')
+            accountname = input()
 
-                print('What is your username in the Social Account Name...')
-                account_username= input()
+            print('What is your username in the Social Account Name...')
+            account_username= input()
                 
-                print ('\n')
-                print('Do you want to :1.cp - To create your own password or 2.gp - To get the password generated for you')
+            print ('\n')
+            print('Do you want to :1.cp - To create your own password or 2.gp - To get the password generated for you')
                
-                short_code1 = input().lower()
-                if short_code1 == 'cp':
-                    account_password = create_password()
-                    print(password)
-                elif short_code1 == 'gp':
-                    print('Input your password....')
-                    account_password = input()
-                else:
-                    print('Invalid short code')     
-                save_new_creds(new_creds(accountname,account_username,account_password))
-                   
-                print(f'{accountname} account credentials have been saved and stored')
+            short_code1 = input().lower()
+            if short_code1 == 'cp':
+                print('Input your password....')
+                account_password = input()
+
+                print(f'Your accountpassword is: {account_password}')
+            elif short_code1 == 'gp':
+                account_password = create_password()
+                print(f'Your accountpassword is: {account_password}')
+
+            else:
+                print('Invalid short code') 
+
+            save_new_creds(new_creds(accountname,account_username,account_password))
+            print(f'{accountname} account credentials have been saved and stored')
             
-        elif short_code == 'esc':
-                print('Add your existing account credentials')
-                print("-"*30)
+        elif short_code == 'ec':
+                    print('Add your existing account credentials')
+                    print("-"*30)
 
-                print('Social Account Name ...')
-                accountname = input()
+                    print('Social Account Name ...')
+                    accountname = input()
 
-                print('Username...')
-                username = input()
+                    print('Username...')
+                    account_username = input()
 
-                print('Password...')
-                password = input()
+                    print('Password...')
+                    account_password= input()
 
-                save_social_account(create_new_account(accountname,username,password))
-                print(f'{accountname} You account password has being saved and safely stored')
+                    save_new_creds(new_creds(accountname,account_username,account_password))
+                    print(f'{accountname} You account password has being saved and safely stored')
                 
-        elif short_code == 'dsc':
-                if display_accounts():
-                    print("Here is a list of all the accounts you  have saved in the application.") 
-                    print("-"*30)   
+        elif short_code == 'da':
+                    if display_new_creds():
+                        print("Here is a list of all the accounts you  have saved in the application.") 
+                        print("-"*30)   
 
-                    for account  in display_accounts():
-                        print(
-                            f"{account.account_name} {account.username} {account.password}"
+                        for credentials  in display_new_creds():
+                            print(
+                            f"{credentials.account_name} {credentials.account_username} {credentials.account_password}"
                         )
-                    print('\n')    
-                else:
-                    print('\n')
-                    print('You do not have any social account credentials saved')       
-                    print('\n')
+                            print('\n')    
+                    else:
+                        print('\n')
+                        print('You do not have any social account credentials saved')       
+                        print('\n')
 
         elif short_code == 'dl':
-                print('Enter an account you want to delete?')
+                    print('Enter an account you want to delete?')
 
-                deleted_account = input()       
+                    delete_account = input()       
                  
-                delete_social_account(deleted_account)
+                    delete_new_creds(delete_account)
 
         elif short_code == 'ex':
-                print('Bye! Come back soon!.')    
+                    print('Bye! Come back soon!.')    
         else:
-                print('Wrong short code! Try again')
+                    print('Wrong short code! Try again')
+        break
             
-            # if find_new_user(username):  # check if user exists
-            #     # check if password is correct
-            #     if user_password (username, user_password):
-            #         print("\n")
-            #         print(f"Welcome back {username} ")
-            #         print('*'*50)
-            #         while True:
-            #             print("Select an option below to continue: \n")
-            #             print(
-            #                 "1. Create a new credential\n2. View saved credentials\n3. Delete credentials\n4. Logout")
-            #             print("\n")
+            
          
         
                        
