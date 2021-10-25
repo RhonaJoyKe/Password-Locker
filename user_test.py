@@ -14,8 +14,6 @@ class TestUser(unittest.TestCase):
     #  self.assertEqual() this is a TestCase method that checks for an expected result. The first argument is the expected result and the second argument is the result that is actually gotten.
         self.assertEqual(self.new_user.first_name,"Rhona")
         self.assertEqual(self.new_user.last_name,"Koome")
-        self.assertEqual(self.new_user.phone_number,"0706555078")
-        self.assertEqual(self.new_user.email,"rhonajoy8@gmail.com")
         self.assertEqual(self.new_user.username,"Jojo")
         self.assertEqual(self.new_user.password,"12345")
 
@@ -24,7 +22,7 @@ class TestUser(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_user = User("Rhona","Koome","0706555078","rhonajoy8@gmail.com","Jojo","12345") # create user object
+        self.new_user = User("Rhona","Koome","Jojo","12345") # create user object
 
     
     def tearDown(self):
@@ -47,7 +45,7 @@ class TestUser(unittest.TestCase):
             test_delete_user to test if we can remove a user from our user list
             '''
             self.new_user.save_user()
-            proto_user = User("Test","user","0712345678","test@user.com","lnk","trhj89") # new contact
+            proto_user = User("Test","user","lnk","trhj89") # new contact
             proto_user.save_user()
 
             self.new_user.delete_user()# Deleting a contact object
