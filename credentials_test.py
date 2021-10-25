@@ -53,7 +53,7 @@ class TestCreds(unittest.TestCase):
             proto_account.save_account()
             self.assertEqual(len(Creds.user_accounts),2)
 
-    def test_find_by_account_username(self):
+    def test_find_by_account_name(self):
         '''
         test to check if we can find a user by username and display information
         '''
@@ -62,7 +62,7 @@ class TestCreds(unittest.TestCase):
         # test_contact = User("Test","user","0711223344","test@user.com") # new contact
         # test_contact.save_contact()
 
-        found_account = Creds.find_by_account_username("Twitter")
+        found_account = Creds.find_by_account_name("Twitter")
 
     def test_display_accounts(self):
         '''

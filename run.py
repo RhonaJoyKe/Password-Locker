@@ -56,12 +56,12 @@ def  delete_new_creds(credentials):
 
     '''
     return credentials.delete_account()
-def find_new_creds(account_username):
+def find_new_creds(account_name):
     '''
     finds new account in credentials
 
     '''
-    return Creds.find_by_account_username(account_username)
+    return Creds.find_by_account_name(account_name)
 def display_new_creds():
     '''
     displays contacts
