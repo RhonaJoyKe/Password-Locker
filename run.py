@@ -131,9 +131,11 @@ def main():
                     s_accounts_view()
 
         elif short_code == 'ex':
-            print("Thank you for visiting us!!")
+            print("Thank you for visiting us!!Successfully Exited")
         else:
             print("Invalid Short code! Please choose a given code")
+
+        
 
 
                     
@@ -226,18 +228,10 @@ def s_accounts_view():
 
         elif short_code == 'ex':
                     print('Bye! Come back soon!.')    
+                 
         else:
-                    print('Wrong short code! Try again')
-
-        break
+         print('Wrong short code! Try again')
         
-    
-            
-            
-         
-        
-                       
-
 
 if __name__ ==  '__main__':
     main()
