@@ -84,7 +84,7 @@ def main():
     while True:
         print("Use these short codes :")
         print("na - create a new account")
-        print("lg-login into account") 
+        
         print("ex -exit the password locker list ")
 
         short_code = input().lower()
@@ -104,16 +104,18 @@ def main():
                            
 
                             print("Please Enter your Username ...")
-                            username = input()
+                            username_new = input()
                             print("-"*50)
 
                             print("Please Enter your Password ...")
-                            password = input()
+                            password_new = input()
                             print("-"*50)
-                            save_new_user(new_user(first_name,last_name,username,password))
+                            save_new_user(new_user(first_name,last_name,username_new,password_new))
                             print('-'*50)
                             print(f"Hello {first_name}.Congratulations Account created successfully. Proceed to login to access your account")
                             print('-'*50)
+                            print("lg-login into account") 
+                            
         elif short_code == 'lg':
             print("Welcome to the Login Portal")
             print("-"*50)
@@ -123,13 +125,18 @@ def main():
             print("Please Enter your Password ...")
             password = input()
             print("-"*50)
-            if username != 'Jojo' and password!= '12345':
-                    print('The account does not exist, please create an account')
+            if username != username_new or password!= password_new:
+                    print('Username or Password Not Correct! ')
+                    print('-'*50)
+                    print ('To retry login use short code lg')
+           
             else:
                     print(f'Hello {username}. Welcome to your socials password locker account')
                     print ('\n')
                     s_accounts_view()
-
+                  
+            
+                    
         elif short_code == 'ex':
             print("Thank you for visiting us!!Successfully Exited")
         else:
@@ -139,8 +146,6 @@ def main():
 
 
                     
-                   
-
 def s_accounts_view():
         
     print('Welcome to your password locker socials account ')
@@ -225,6 +230,7 @@ def s_accounts_view():
                     found_account=find_new_creds(account)
                  
                     delete_new_creds(found_account)
+                    print('Your {account} account has been deleted successfully!press da to view and confirm')
 
         elif short_code == 'ex':
                     print('Bye! Come back soon!.')    
