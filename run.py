@@ -79,7 +79,7 @@ def create_password(length=6):
 def main():
     print("Holla there,Cómo estás,Welcome to your Password Locker App. What is your name?")
     user_name = input()
-    print(f"Hello {user_name}. what would you like to do?")
+    print(f"Hello {user_name}. To use our Application, you MUST first create an account")
     print('\n')
     while True:
         print("Use these short codes :")
@@ -141,6 +141,7 @@ def main():
             print("Thank you for visiting us!!Successfully Exited")
         else:
             print("Invalid Short code! Please choose a given code")
+        
 
         
 
@@ -157,7 +158,7 @@ def s_accounts_view():
         print('ec - Add an existing social account credentials')
         print('da - Display saved social accounts ')
         print('dl - Delete a saved account ')
-        print('ex - Exit from the account')
+        # print('ex - Exit from the account')
 
         short_code = input().lower()
 
@@ -224,7 +225,7 @@ def s_accounts_view():
                         print('\n')
 
         elif short_code == 'dl':
-                    print('Enter username for account you want to delete?')
+                    print('Enter account name for account you want to delete?')
 
                     account = input()       
                     found_account=find_new_creds(account)
@@ -232,11 +233,13 @@ def s_accounts_view():
                     delete_new_creds(found_account)
                     print('Your {account} account has been deleted successfully!press da to view and confirm')
 
-        elif short_code == 'ex':
-                    print('Bye! Come back soon!.')    
+        # elif short_code == 'ex':
+        #             print('Bye! Come back soon!.') 
+
                  
         else:
          print('Wrong short code! Try again')
+        break
         
 
 if __name__ ==  '__main__':
