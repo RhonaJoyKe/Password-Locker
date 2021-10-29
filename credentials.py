@@ -25,12 +25,9 @@ class Creds:
     @classmethod
     def find_by_account_name(cls,account_name):
         '''
-        Method that takes in a number and returns a contact that matches that number.
+        Method  returns an account_name
 
-        Args:
-            number: Phone number to search for
-        Returns :
-            Contact of person that matches the number.
+        
         '''
 
         for creds in cls.user_accounts:
@@ -42,7 +39,7 @@ class Creds:
     @classmethod
     def display_accounts(cls):
         '''
-        method that returns the contact list
+        method that displays different accounts
         '''
         return cls.user_accounts
     

@@ -64,7 +64,7 @@ def find_new_creds(account_name):
     return Creds.find_by_account_name(account_name)
 def display_new_creds():
     '''
-    displays contacts
+    displays credentials
 
     '''
     return Creds.display_accounts()
@@ -158,7 +158,7 @@ def s_accounts_view():
         print('ec - Add an existing social account credentials')
         print('da - Display saved social accounts ')
         print('dl - Delete a saved account ')
-        # print('ex - Exit from the account')
+       
 
         short_code = input().lower()
 
@@ -233,8 +233,7 @@ def s_accounts_view():
                     delete_new_creds(found_account)
                     print('Your {account} account has been deleted successfully!press da to view and confirm')
 
-        # elif short_code == 'ex':
-        #             print('Bye! Come back soon!.') 
+        
 
                  
         else:
